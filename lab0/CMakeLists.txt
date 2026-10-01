@@ -11,7 +11,7 @@ endif ()
 
 add_executable(
         lab0 main.cpp
-        comparator.cpp
         word_counter.cpp
         word_counter.h
+        comparator.h
 )

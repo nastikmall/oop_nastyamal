@@ -2,14 +2,27 @@
 #define LAB0_WORD_COUNTER_H
 
 #include <string>
-#include <list>
+// #include <list>
 #include <map>
+// #include <vector>
 
-struct WordCountRes {
+class WordCounter {
     std::map<std::string, int> wordCounts;
-    int totalWords;
+    int totalWords = 0;
+    std::string currWord;
+
+    void buildWord(unsigned char c);
+
+    void finalizeWord();
+
+public:
+    void addLine(std::string &line);
+
+    void finishProcess();
+
+    std::map<std::string, int> getWordCounts() const;
+
+    int getTotalWords() const;
 };
 
-WordCountRes countWords(const std::list<std::string> &lines);
-
-#endif //LAB0_WORD_COUNTER_H
+#endif
